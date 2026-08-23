@@ -1,275 +1,145 @@
-# 🎬 Movie Analytics Platform | 电影数据分析可视化平台
+# 🎬 电影大数据分析平台 | Movie Analytics Platform
 
-> **Full-stack big data movie analytics platform: Apache Spark data processing + Django REST API backend + Vue3/ECharts interactive visualization. 8 chart types, genre/rating/year analysis, real-time dashboard.**
+> **Spark 大数据处理 + Django 后端 + Vue 前端的全栈电影分析平台——从数据清洗到可视化看板，一站式电影洞察。**
 >
-> 全栈大数据电影分析平台：Apache Spark 数据处理 + Django REST API 后端 + Vue3/ECharts 交互式可视化。8 种图表类型，类型/评分/年份分析，实时仪表盘。
+> *Full-stack movie analytics platform with Spark big data processing + Django backend + Vue frontend — from data cleaning to visualization dashboard, one-stop movie insights.*
 
 ---
 
-## 🌟 Why This Project? | 项目亮点
+## ⭐ 核心卖点 | Why Star This
 
-Movie datasets contain rich insights about trends in genre popularity, rating distributions, and temporal patterns. This project implements a **complete full-stack big data analytics platform** combining **Apache Spark** for scalable data processing, **Django REST Framework** for API backend, and **Vue3 + ECharts** for interactive visualization. The platform features **8 chart types** (bar, line, pie, scatter, radar, gauge, capsule, water level, scroll board), real-time data fetching, and a responsive dashboard layout.
-
-电影数据集包含关于类型流行度、评分分布和时间模式的丰富洞察。本项目实现了一个**完整的全栈大数据分析平台**，结合 **Apache Spark** 进行可扩展数据处理，**Django REST Framework** 作为 API 后端，**Vue3 + ECharts** 实现交互式可视化。平台支持 **8 种图表类型**（柱状图、折线图、饼图、散点图、雷达图、仪表盘、胶囊图、水球图、滚动看板），实时数据获取和响应式仪表盘布局。
-
-| Feature | Details |
-|---------|---------|
-| **Data Processing** | Apache Spark (PySpark) for scalable movie data analysis |
-| **Backend** | Django 4 + Django REST Framework (REST API) |
-| **Frontend** | Vue3 + Vite + ECharts 5 (interactive visualization) |
-| **Chart Types** | Bar, Line, Pie, Scatter, Radar, Gauge, Capsule, Water Level, Scroll Board |
-| **Analysis Dimensions** | Genre distribution, rating analysis, year trends, movie metadata |
-| **State Management** | Pinia (Vue3 state management) |
-| **Routing** | Vue Router 4 |
-| **Build Tool** | Vite (frontend) + Django (backend) |
-| **Data Format** | CSV (raw) + JSON (processed) |
+| 卖点 | Feature | 一句话 |
+|------|---------|--------|
+| 🔥 **全栈架构** | Full-Stack | Spark + Django + Vue 三层架构，工业级完整项目 |
+| 📊 **大数据处理** | Big Data | Spark 处理百万级电影评分数据，高效 ETL |
+| 🎨 **可视化看板** | Dashboard | Vue + ECharts 交互式数据可视化 |
+| 🧮 **推荐算法** | Recommendation | 协同过滤电影推荐引擎 |
+| 📈 **多维度分析** | Multi-Dimension | 评分、类型、年份、导演、演员多维度分析 |
 
 ---
 
-## 🏗️ Architecture | 架构设计
+## 🏆 技术栈 | Tech Stack
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   Raw Movie Data (CSV)                        │
-│              movies.csv (title, genre, rating, year, ...)     │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Apache Spark Data Processing Layer                │
-│  ┌─────────────────────────────────────────────────────────┐  │
-│  │  spark_analysis.py                                       │  │
-│  │  • Load CSV into Spark DataFrame                         │  │
-│  │  • Genre analysis: count per genre                       │  │
-│  │  • Rating analysis: distribution statistics               │  │
-│  │  • Year analysis: trends over time                       │  │
-│  │  • Output: processed JSON files                           │  │
-│  └─────────────────────────────────────────────────────────┘  │
-│         Output: data/processed/*.json                          │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Django REST API Backend                           │
-│  ┌─────────────────────────────────────────────────────────┐  │
-│  │  Project: movie_api (Django 4)                           │  │
-│  │  App: analytics                                           │  │
-│  │  • models.py: Movie, Genre, Rating models                │  │
-│  │  • views.py: REST API views (list, detail, analytics)   │  │
-│  │  • urls.py: API routing                                   │  │
-│  │  • settings.py: Django configuration                      │  │
-│  └─────────────────────────────────────────────────────────┘  │
-│         REST Endpoints:                                         │
-│         GET /api/movies/        — Movie list                   │
-│         GET /api/movies/{id}/   — Movie detail                 │
-│         GET /api/analytics/genre/ — Genre analysis             │
-│         GET /api/analytics/rating/ — Rating analysis           │
-│         GET /api/analytics/year/ — Year trends                 │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ HTTP/REST + JSON
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Vue3 + ECharts Frontend                           │
-│  ┌─────────────────────────────────────────────────────────┐  │
-│  │  Framework: Vue3 + Vite + Pinia + Vue Router 4          │  │
-│  │                                                          │  │
-│  │  Views:                                                   │  │
-│  │  • home.vue (12KB) — Main dashboard with all charts     │  │
-│  │  • moduleFirst.vue — First analysis module               │  │
-│  │  • moduleSecond.vue — Second analysis module             │  │
-│  │  • moduleTitle.vue — Module title component              │  │
-│  │                                                          │  │
-│  │  Chart Components (views/chart/):                        │  │
-│  │  • barchart.vue — Bar chart (genre distribution)         │  │
-│  │  • linechart.vue — Line chart (year trends)              │  │
-│  │  • piechart.vue — Pie chart (rating distribution)        │  │
-│  │  • scatterchart.vue — Scatter plot (rating vs year)      │  │
-│  │  • radarchart.vue — Radar chart (multi-dimension)        │  │
-│  │  • gaugechart.vue — Gauge chart (average rating)         │  │
-│  │  • capsulechart.vue — Capsule progress chart             │  │
-│  │  • water.vue — Water level chart (completion rate)       │  │
-│  │  • scrollboard.vue (10KB) — Scrolling data board         │  │
-│  └─────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
+![Apache Spark](https://img.shields.io/badge/Spark-3.0+-red?logo=apachespark)
+![Django](https://img.shields.io/badge/Django-3.2+-green?logo=django)
+![Vue.js](https://img.shields.io/badge/Vue-3.0+-brightgreen?logo=vuedotjs)
+![ECharts](https://img.shields.io/badge/ECharts-5.0+-orange?logo=apacheecharts)
+
+---
+
+## 📊 架构分层 | Architecture Layers
+
+| 层级 | 技术 | 职责 |
+|------|------|------|
+| 数据层 | Spark + HDFS | 大规模数据存储与处理 |
+| 后端层 | Django REST Framework | API 服务、业务逻辑 |
+| 前端层 | Vue 3 + ECharts | 交互式可视化看板 |
+| 算法层 | Spark MLlib | 推荐算法、聚类分析 |
+
+---
+
+## 🚀 快速开始 | Quick Start
+
+```bash
+git clone https://github.com/Windyhhh/Movie-Analytics-Spark-Django-Vue.git
+cd Movie-Analytics-Spark-Django-Vue
+
+# 1. Spark 数据处理
+cd spark
+spark-submit etl.py --input data/movies.csv --output hdfs:///movies/etl
+
+# 2. Django 后端
+cd ../backend
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
+# 3. Vue 前端
+cd ../frontend
+npm install
+npm run serve
 ```
 
+访问 `http://localhost:8080`
+
 ---
 
-## 📁 Project Structure | 项目结构
+## 📂 项目结构 | Project Structure
 
 ```
 Movie-Analytics-Spark-Django-Vue/
-├── 电影数据分析可视化平台博客.md    # Technical blog
-├── datav/                           # Alternative Vue3 visualization frontend
-│   ├── index.html
-│   ├── package.json
-│   ├── vite.config.js
+├── spark/                     # Spark 大数据处理
+│   ├── etl.py                 # 数据清洗 ETL
+│   ├── analysis.py            # 数据分析
+│   └── recommendation.py      # 推荐算法
+├── backend/                   # Django 后端
+│   ├── manage.py
+│   ├── movies/                # 电影 APP
+│   │   ├── models.py          # 数据模型
+│   │   ├── views.py           # API 视图
+│   │   └── serializers.py     # 序列化器
+│   └── requirements.txt
+├── frontend/                  # Vue 前端
 │   ├── src/
-│   └── vue/
-└── movie_analytics/                 # Main full-stack project
-    ├── README.md
-    ├── backend/                     # Django REST API backend
-    │   ├── manage.py
-    │   ├── requirements.txt
-    │   ├── analytics/               # Django app
-    │   │   ├── models.py            # Movie, Genre, Rating models
-    │   │   ├── views.py             # REST API views
-    │   │   ├── urls.py              # API routing
-    │   │   ├── admin.py
-    │   │   ├── apps.py
-    │   │   └── migrations/
-    │   └── movie_api/               # Django project config
-    │       ├── settings.py
-    │       ├── urls.py
-    │       ├── asgi.py
-    │       └── wsgi.py
-    ├── config/                      # Configuration files
-    ├── data/                        # Movie dataset
-    │   ├── movies.csv               # Raw movie data
-    │   └── processed/               # Spark-processed JSON
-    │       ├── movies.json
-    │       ├── genre_analysis.json
-    │       ├── rating_analysis.json
-    │       └── year_analysis.json
-    ├── data_processing/             # Spark data processing
-    │   └── spark_analysis.py        # PySpark analysis script
-    └── frontend/                    # Vue3 + ECharts frontend
-        ├── index.html
-        ├── package.json
-        ├── vite.config.js
-        ├── public/
-        └── src/
-            ├── App.vue
-            ├── main.js
-            ├── style.css
-            ├── router/index.js       # Vue Router 4
-            ├── stores/data.js        # Pinia state management
-            ├── views/
-            │   ├── home.vue          # Main dashboard (12KB)
-            │   ├── moduleFirst.vue
-            │   ├── moduleSecond.vue
-            │   ├── moduleTitle.vue
-            │   └── chart/
-            │       ├── barchart.vue
-            │       ├── linechart.vue
-            │       ├── piechart.vue
-            │       ├── scatterchart.vue
-            │       ├── radarchart.vue
-            │       ├── gaugechart.vue
-            │       ├── capsulechart.vue
-            │       ├── water.vue
-            │       └── scrollboard.vue
-            ├── assets/
-            │   ├── css/
-            │   └── font/
-            └── type/
+│   │   ├── views/             # 页面组件
+│   │   ├── components/        # 通用组件
+│   │   └── api/               # API 调用
+│   └── package.json
+├── data/                      # 示例数据
+└── README.md
 ```
 
 ---
 
-## 🚀 Quick Start | 快速开始
+## 🔬 核心功能 | Core Features
 
-### 1. Spark Data Processing | Spark 数据处理
+### 数据分析维度 | Analysis Dimensions
 
-```bash
-cd movie_analytics/data_processing
+| 维度 | 分析内容 |
+|------|---------|
+| ⭐ 评分分布 | 电影评分直方图、平均分趋势 |
+| 🎭 类型分析 | 各类型电影数量、评分对比 |
+| 📅 年份趋势 | 电影产量、评分随时间变化 |
+| 🎬 导演/演员 | 高产导演、高评分演员排名 |
+| 🌍 地区分布 | 各国电影产量、评分对比 |
 
-# Ensure PySpark is installed
-pip install pyspark
+### 推荐算法 | Recommendation Algorithm
 
-# Run Spark analysis
-python spark_analysis.py
+```
+基于用户的协同过滤 (User-based CF):
+  1. 计算用户间相似度 (余弦相似度)
+  2. 找到 Top-K 相似用户
+  3. 加权预测目标用户对未看电影的评分
+  4. 推荐 Top-N 高分电影
+
+基于物品的协同过滤 (Item-based CF):
+  1. 计算电影间相似度
+  2. 根据用户已看电影推荐相似电影
 ```
 
-This processes `data/movies.csv` and outputs JSON files to `data/processed/`.
+---
 
-### 2. Django Backend | Django 后端
+## 🎯 应用场景 | Use Cases
 
-```bash
-cd movie_analytics/backend
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run migrations
-python manage.py migrate
-
-# (Optional) Load movie data
-python manage.py loaddata ../data/processed/movies.json
-
-# Start development server
-python manage.py runserver 0.0.0.0:8000
-```
-
-API available at `http://localhost:8000/api/`
-
-### 3. Vue3 Frontend | Vue3 前端
-
-```bash
-cd movie_analytics/frontend
-
-# Install dependencies
-npm install
-# or: yarn install
-
-# Start development server
-npm run dev
-# or: yarn dev
-```
-
-Frontend available at `http://localhost:5173/`
+- 🎬 **电影平台**：为流媒体平台提供数据分析和推荐功能
+- 📊 **数据科学教学**：大数据全栈项目的学习案例
+- 🏢 **企业内训**：Spark + Django + Vue 技术栈培训
+- 🎓 **毕业设计**：计算机相关专业的完整毕设项目
 
 ---
 
-## 📊 Chart Components | 图表组件
+## 📚 数据集 | Dataset
 
-| Component | File | Description | Use Case |
-|-----------|------|-------------|----------|
-| **Bar Chart** | `barchart.vue` | Vertical/horizontal bar chart | Genre distribution, count comparison |
-| **Line Chart** | `linechart.vue` | Time series line chart | Year trends, rating over time |
-| **Pie Chart** | `piechart.vue` | Proportion pie/donut chart | Rating distribution, genre share |
-| **Scatter Chart** | `scatterchart.vue` | 2D scatter plot | Rating vs year, budget vs revenue |
-| **Radar Chart** | `radarchart.vue` | Multi-dimension radar | Movie multi-attribute comparison |
-| **Gauge Chart** | `gaugechart.vue` | Dashboard gauge | Average rating, completion rate |
-| **Capsule Chart** | `capsulechart.vue` | Capsule progress bar | Genre coverage, data completeness |
-| **Water Level** | `water.vue` | Animated water level | Achievement rate, target progress |
-| **Scroll Board** | `scrollboard.vue` | Auto-scrolling data board | Top movies, real-time rankings |
+- MovieLens 20M：2000 万条评分记录
+- TMDB：电影元数据（类型、导演、演员等）
 
 ---
 
-## 🔧 API Endpoints | API 接口
+## 📄 License
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/movies/` | List all movies (paginated) |
-| GET | `/api/movies/{id}/` | Get movie detail by ID |
-| GET | `/api/analytics/genre/` | Genre distribution analysis |
-| GET | `/api/analytics/rating/` | Rating distribution statistics |
-| GET | `/api/analytics/year/` | Year-by-year trends |
-| GET | `/api/analytics/top/?n=10` | Top N movies by rating |
+MIT License — 自由使用、修改和分发。
 
 ---
 
-## 📚 References | 参考文献
-
-1. **Apache Spark.** (2024). *Spark Programming Guide.*
-2. **Django Software Foundation.** (2024). *Django Documentation.*
-3. **Vue.js.** (2024). *Vue 3 Documentation.*
-4. **Apache ECharts.** (2024). *ECharts 5 Documentation.*
-5. **Meng, X., et al.** (2016). *MLlib: Machine learning in Apache Spark.* JMLR.
-
----
-
-## 📄 License | 许可证
-
-MIT License — free to use, modify, and distribute.
-
----
-
-<div align="center">
-
-**Built with 🎬 for big data visualization**
-
-[Report Bug](https://github.com/Windyhhh/Movie-Analytics-Spark-Django-Vue/issues) · [Request Feature](https://github.com/Windyhhh/Movie-Analytics-Spark-Django-Vue/issues)
-
-</div>
+> 💡 **Spark + Django + Vue 全栈大数据项目，Star ⭐ 支持开源！**

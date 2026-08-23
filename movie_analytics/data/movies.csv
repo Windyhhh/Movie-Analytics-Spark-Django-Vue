@@ -1,0 +1,101 @@
+movie_id,title,genre,release_year,rating,votes
+1,The Shawshank Redemption,Drama,1994,9.3,2700000
+2,The Godfather,Crime,1972,9.2,1900000
+3,The Dark Knight,Action,2008,9.0,2600000
+4,The Godfather Part II,Crime,1974,9.0,1300000
+5,12 Angry Men,Drama,1957,9.0,850000
+6,Schindler's List,Biography,1993,8.9,1500000
+7,The Lord of the Rings: The Return of the King,Fantasy,2003,8.9,1800000
+8,Pulp Fiction,Crime,1994,8.9,2100000
+9,The Lord of the Rings: The Fellowship of the Ring,Fantasy,2001,8.8,1900000
+10,"The Good, the Bad and the Ugly",Western,1966,8.8,1200000
+11,Forrest Gump,Drama,1994,8.8,2200000
+12,Fight Club,Drama,1999,8.8,2100000
+13,Inception,Sci-Fi,2010,8.8,2300000
+14,The Lord of the Rings: The Two Towers,Fantasy,2002,8.8,1700000
+15,Star Wars: Episode V - The Empire Strikes Back,Action,1980,8.7,1600000
+16,The Matrix,Sci-Fi,1999,8.7,2000000
+17,Goodfellas,Crime,1990,8.7,1300000
+18,One Flew Over the Cuckoo's Nest,Drama,1975,8.7,1100000
+19,Se7en,Mystery,1995,8.6,1800000
+20,The Silence of the Lambs,Thriller,1991,8.6,1700000
+21,The Departed,Crime,2006,8.5,1800000
+22,The Prestige,Drama,2006,8.5,1700000
+23,The Intouchables,Comedy,2011,8.5,1900000
+24,Schindler's List,Biography,1993,8.9,1500000
+25,Psycho,Horror,1960,8.5,1300000
+26,Back to the Future,Adventure,1985,8.5,1700000
+27,Star Wars: Episode IV - A New Hope,Action,1977,8.6,1900000
+28,Interstellar,Sci-Fi,2014,8.6,2100000
+29,The Lion King,Animation,1994,8.5,1500000
+30,The Pianist,Biography,2002,8.5,1300000
+31,Titanic,Romance,1997,8.8,2100000
+32,Gladiator,Action,2000,8.5,1900000
+33,The Shawshank Redemption,Drama,1994,9.3,2700000
+34,The Godfather,Crime,1972,9.2,1900000
+35,The Dark Knight,Action,2008,9.0,2600000
+36,The Godfather Part II,Crime,1974,9.0,1300000
+37,12 Angry Men,Drama,1957,9.0,850000
+38,Schindler's List,Biography,1993,8.9,1500000
+39,The Lord of the Rings: The Return of the King,Fantasy,2003,8.9,1800000
+40,Pulp Fiction,Crime,1994,8.9,2100000
+41,The Lord of the Rings: The Fellowship of the Ring,Fantasy,2001,8.8,1900000
+42,"The Good, the Bad and the Ugly",Western,1966,8.8,1200000
+43,Forrest Gump,Drama,1994,8.8,2200000
+44,Fight Club,Drama,1999,8.8,2100000
+45,Inception,Sci-Fi,2010,8.8,2300000
+46,The Lord of the Rings: The Two Towers,Fantasy,2002,8.8,1700000
+47,Star Wars: Episode V - The Empire Strikes Back,Action,1980,8.7,1600000
+48,The Matrix,Sci-Fi,1999,8.7,2000000
+49,Goodfellas,Crime,1990,8.7,1300000
+50,One Flew Over the Cuckoo's Nest,Drama,1975,8.7,1100000
+51,Se7en,Mystery,1995,8.6,1800000
+52,The Silence of the Lambs,Thriller,1991,8.6,1700000
+53,The Departed,Crime,2006,8.5,1800000
+54,The Prestige,Drama,2006,8.5,1700000
+55,The Intouchables,Comedy,2011,8.5,1900000
+56,Psycho,Horror,1960,8.5,1300000
+57,Back to the Future,Adventure,1985,8.5,1700000
+58,Star Wars: Episode IV - A New Hope,Action,1977,8.6,1900000
+59,Interstellar,Sci-Fi,2014,8.6,2100000
+60,The Lion King,Animation,1994,8.5,1500000
+61,The Pianist,Biography,2002,8.5,1300000
+62,Titanic,Romance,1997,8.8,2100000
+63,Gladiator,Action,2000,8.5,1900000
+64,The Shawshank Redemption,Drama,1994,9.3,2700000
+65,The Godfather,Crime,1972,9.2,1900000
+66,The Dark Knight,Action,2008,9.0,2600000
+67,The Godfather Part II,Crime,1974,9.0,1300000
+68,12 Angry Men,Drama,1957,9.0,850000
+69,Schindler's List,Biography,1993,8.9,1500000
+70,The Lord of the Rings: The Return of the King,Fantasy,2003,8.9,1800000
+71,Pulp Fiction,Crime,1994,8.9,2100000
+72,The Lord of the Rings: The Fellowship of the Ring,Fantasy,2001,8.8,1900000
+73,"The Good, the Bad and the Ugly",Western,1966,8.8,1200000
+74,Forrest Gump,Drama,1994,8.8,2200000
+75,Fight Club,Drama,1999,8.8,2100000
+76,Inception,Sci-Fi,2010,8.8,2300000
+77,The Lord of the Rings: The Two Towers,Fantasy,2002,8.8,1700000
+78,Star Wars: Episode V - The Empire Strikes Back,Action,1980,8.7,1600000
+79,The Matrix,Sci-Fi,1999,8.7,2000000
+80,Goodfellas,Crime,1990,8.7,1300000
+81,One Flew Over the Cuckoo's Nest,Drama,1975,8.7,1100000
+82,Se7en,Mystery,1995,8.6,1800000
+83,The Silence of the Lambs,Thriller,1991,8.6,1700000
+84,The Departed,Crime,2006,8.5,1800000
+85,The Prestige,Drama,2006,8.5,1700000
+86,The Intouchables,Comedy,2011,8.5,1900000
+87,Psycho,Horror,1960,8.5,1300000
+88,Back to the Future,Adventure,1985,8.5,1700000
+89,Star Wars: Episode IV - A New Hope,Action,1977,8.6,1900000
+90,Interstellar,Sci-Fi,2014,8.6,2100000
+91,The Lion King,Animation,1994,8.5,1500000
+92,The Pianist,Biography,2002,8.5,1300000
+93,Titanic,Romance,1997,8.8,2100000
+94,Gladiator,Action,2000,8.5,1900000
+95,The Shawshank Redemption,Drama,1994,9.3,2700000
+96,The Godfather,Crime,1972,9.2,1900000
+97,The Dark Knight,Action,2008,9.0,2600000
+98,The Godfather Part II,Crime,1974,9.0,1300000
+99,12 Angry Men,Drama,1957,9.0,850000
+100,Schindler's List,Biography,1993,8.9,1500000

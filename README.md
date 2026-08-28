@@ -2,24 +2,33 @@
 
 # 🎬 Movie-Analytics-Spark-Django-Vue
 
-### A full-stack movie analytics platform.
+### End-to-end movie data analytics — Spark + Django + Vue3.
 
-Apache Spark + Django REST API + Vue3 / ECharts — 5 chart types with genre, rating and year analysis.
+Distributed processing with Spark, a Django backend and a Vue3 frontend for professional movie-data visualization.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Apache Spark](https://img.shields.io/badge/Spark-3-E25A1C?logo=apachespark&logoColor=white)](https://spark.apache.org/)
 [![Django](https://img.shields.io/badge/Django-4-092E20?logo=django&logoColor=white)](https://www.djangoproject.com/)
 [![Vue](https://img.shields.io/badge/Vue-3-4FC08D?logo=vuedotjs&logoColor=white)](https://vuejs.org/)
-[![ECharts](https://img.shields.io/badge/ECharts-5-AA344D?logo=apacheecharts&logoColor=white)](https://echarts.apache.org/)
 
 </div>
 
 ---
 
-**Movie-Analytics-Spark-Django-Vue** is a full-stack movie analytics platform — **Apache Spark** for processing, **Django REST** for the API, and a **Vue3 + ECharts** frontend with **5 chart types** covering genre, rating and year analysis.
+**Movie-Analytics-Spark-Django-Vue** is an end-to-end movie-data analytics platform: **Spark** for distributed processing, a **Django** backend serving APIs, and a **Vue3** frontend for interactive visualization.
 
 > [!NOTE]
-> 中文项目：全栈电影分析平台——Apache Spark + Django REST API + Vue3/ECharts，5 种图表，类型/评分/年份分析。
+> 中文项目：电影数据分析可视化平台——Spark 分布式处理 + Django 后端 + Vue3 前端。
+
+---
+
+## Features
+
+- **Spark processing** — distributed analytics over movie datasets.
+- **Django API** — structured backend endpoints.
+- **Vue3 frontend** — interactive, professional visualization.
+- **Full-stack** — data → processing → API → visualization.
 
 ---
 
@@ -29,20 +38,15 @@ Apache Spark + Django REST API + Vue3 / ECharts — 5 chart types with genre, ra
 git clone https://github.com/Windyhhh/Movie-Analytics-Spark-Django-Vue.git
 cd Movie-Analytics-Spark-Django-Vue
 
-# Backend (Spark + Django) — see README for setup
-# Frontend
-cd datav
-npm install
-npm run dev
+# process data with Spark
+spark-submit movie_analytics/process.py
+
+# run Django backend
+python manage.py runserver
+
+# start Vue frontend
+cd movie_analytics/frontend && npm install && npm run serve
 ```
-
----
-
-## Features
-
-- **Spark + Django** — distributed processing behind a REST API.
-- **Vue3 + ECharts** — 5 chart types.
-- **Multi-dimension** — genre, rating, year analysis.
 
 ---
 
@@ -50,10 +54,10 @@ npm run dev
 
 ```
 Movie-Analytics-Spark-Django-Vue/
-├── datav/                    # Vue3 frontend
-│   ├── src/                  # App.vue, router, stores, components
-│   └── package.json
-└── README.md
+├── movie_analytics/            # Django app
+│   └── frontend/               # Vue3 SPA
+├── datav/                      # data & processing
+└── docs/                       # blog
 ```
 
 ---

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 Movie-Analytics-Spark-Django-Vue
+# 电影分析全栈 | Movie-Analytics-Spark-Django-Vue
 
 ### End-to-end movie data analytics — Spark + Django + Vue3.
 
